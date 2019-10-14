@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 
-const Backdrop = () => {
-    const [classes] = useState()
-    return (
-        <div className={classes}>
+const Backdrop = ({ className, activeClass, onClick, isOpen }) => {
+    const classes = useMemo(() => (
+        isOpen ?
+            [className, activeClass] :
+            [className]
+    ), [isOpen, className, activeClass]);
 
-        </div>
-    );
+    return <div className={classes.join(' ')} onClick={onClick} />;
 };
 
 export default Backdrop;

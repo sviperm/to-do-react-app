@@ -8,6 +8,7 @@
     height: 160px;
     bottom: 0;
     left: 0;
+    pointer-events: none;
     background: linear-gradient(180deg, #cce8fe00 0%, #cce8fe7e 20%, var(--light-blue-color) 100%);
     transition: all .3s;
 }

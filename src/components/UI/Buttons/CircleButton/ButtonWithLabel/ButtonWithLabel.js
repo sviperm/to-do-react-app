@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import CircleButton from '../CircleButton';
 import classes from './ButtonWithLabel.module.css';
 
-const ButtonWithLabel = props => {
+const ButtonWithLabel = ({ order, onClick, label }) => {
     const [isLabelVisable, setLabelVisability] = useState(false)
-    const translateY = (props.order * 65) + 20;
+    const translateY = (order * 65) + 10;
     return (
         <div className={classes.ButtonWithLabel}
             style={{ transform: `translateY(-${translateY}px)` }}
-            onClick={props.onClick}
+            onClick={onClick}
             onPointerEnter={() => setLabelVisability(true)}
             onPointerLeave={() => setLabelVisability(false)}
         >
             <CircleButton
                 size="small"
-                icon={props.label.toLowerCase()}
+                icon={label.toLowerCase()}
             />
-            {props.label && isLabelVisable &&
-                <span>{props.label}</span>
+            {label && isLabelVisable &&
+                <span>{label}</span>
             }
         </div>
     );

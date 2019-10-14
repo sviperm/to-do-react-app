@@ -1,43 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import classes from './CircleButton.module.css';
 
-const CircleButton = props => {
-    const [isActive, setIsActive] = useState(false);
+const CircleButton = ({ background, size, icon, animationOnActive, isActive, onClick }) => {
     const [btnClasses, setBtnClasses] = useState([
         classes.CircleButton,
-        classes[props.background] || null,
-        classes[props.size] || null,
-        classes[`icon-${props.icon}`] || null,
+        classes[background] || null,
+        classes[size] || null,
+        classes[`icon-${icon}`] || null,
+        classes[animationOnActive] || null,
     ]);
 
-    const changeActiveHandler = () => {
-        if (props.becomeActiveOnClick) {
-            setIsActive(prevState => !prevState);
-            setBtnClasses(prevState => (
-                isActive ?
-                    prevState.filter(btnClass => btnClass !== classes.active) :
-                    prevState.concat(classes.active)));
-        };
-    };
+    useEffect(() => {
+        setBtnClasses(prevState => (
+            isActive ?
+                prevState.concat(classes.active) :
+                prevState.filter(btnClass => btnClass !== classes.active)
+        ));
+    }, [isActive])
 
-    const animationHandler = (animation) => {
-        if (animation) {
-            setBtnClasses(prevState => (
-                isActive ?
-                    prevState.filter(btnClass => btnClass !== classes[animation]) :
-                    prevState.concat(classes[animation])));
-        };
-    };
-
-    const onClickHandler = (onClickFunction) => {
-        changeActiveHandler();
-        animationHandler(props.animationOnClick);
-        if (onClickFunction) onClickFunction();
-    }
     return (
-        <button className={btnClasses.join(' ')} onClick={() => onClickHandler(props.onClick)}>
-            <div></div>
-        </button>
+        useMemo(() => (
+            <button className={btnClasses.join(' ')} onClick={onClick}>
+                <div></div>
+            </button>
+        ), [btnClasses, onClick])
     );
 };
 

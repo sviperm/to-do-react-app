@@ -4,6 +4,7 @@
     width: 65px;
     height: 65px;
     cursor: pointer;
+    pointer-events: all;
     background-color: white;
     color: var(--blue);
     box-shadow: 0px 3px 3px -1px var(--gray-shadow);
@@ -51,6 +52,6 @@
     content: '\f022';
     font-size: 1.4rem;
 }
-.CircleButton.turn div {
+.CircleButton.turn.active div {
     transform: rotate(45deg) translateZ(0);        
 }

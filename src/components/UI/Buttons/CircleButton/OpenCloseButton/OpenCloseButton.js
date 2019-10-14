@@ -1,9 +1,9 @@
 import React from 'react';
 import CircleButton from '../CircleButton';
 
-const OpenCloseButton = ({ onClick }) => {
+const OpenCloseButton = ({ isActive, onClick }) => {
     return (
-        <CircleButton background="blue" icon="cross" becomeActiveOnClick animationOnClick="turn" onClick={onClick} />
+        <CircleButton background="blue" icon="cross" animationOnActive="turn" isActive={isActive} onClick={onClick} />
     );
 };
 

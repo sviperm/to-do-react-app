@@ -1,5 +1,5 @@
 import React from 'react';
-import SideBarItem from '../../../components/SideBarItem/SideBarItem';
+import SideBarItem from '../../../components/Sidebar/SideBarItem/SideBarItem';
 import classes from './Navigation.module.css';
 
 const Navigation = props => {
