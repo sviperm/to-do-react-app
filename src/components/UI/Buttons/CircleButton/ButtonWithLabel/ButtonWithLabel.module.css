@@ -1,0 +1,12 @@
+.ButtonWithLabel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.ButtonWithLabel span {
+    position: absolute;
+    padding-left: 10px;
+    left: 100%;
+    text-transform: capitalize;
+}

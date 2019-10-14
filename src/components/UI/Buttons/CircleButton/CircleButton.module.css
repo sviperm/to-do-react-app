@@ -1,0 +1,56 @@
+.CircleButton {
+    border: 0;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    background-color: white;
+    color: var(--blue);
+    box-shadow: 0px 3px 3px -1px var(--gray-shadow);
+    transition: box-shadow .5s cubic-bezier(0.3, 0.94, 0.3, 0.94),
+                background-color .05s ease-in-out;
+}
+.CircleButton:hover {
+    box-shadow: 0 3px 4px 1px var(--gray-shadow);
+}
+.CircleButton:focus {
+    outline: none;
+}
+.CircleButton.small {
+    width: 57px;
+    height: 57px;
+}
+.CircleButton.active {
+    background-color: #f1f1f1;
+}
+.CircleButton.blue {
+    background-color: var(--blue);
+    color: white;
+}
+.CircleButton.blue.active {
+    background-color: var(--blue-dark);
+}
+.CircleButton div {
+    transition: transform .2s ease-in-out;
+}
+.CircleButton div::before {
+    font-size: 2rem;
+}
+.CircleButton.icon-cross div::before {
+    font-size: 2rem;
+    content: '\FF0B';
+}
+.CircleButton.icon-category div::before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f552';
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.CircleButton.icon-task div::before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f022';
+    font-size: 1.4rem;
+}
+.CircleButton.turn div {
+    transform: rotate(45deg) translateZ(0);        
+}

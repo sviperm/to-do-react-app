@@ -1,0 +1,51 @@
+.Row {
+    display: grid;
+    grid-template-columns: 25px max-content;
+    grid-template-rows: auto;
+    gap: var(--nav-gap);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.Row.active {
+    color: var(--blue);
+}
+.Row:hover{
+    color: var(--blue);
+}
+.Row.title {
+    cursor: default;
+    font-size: .7rem;
+    color:var(--gray);
+    text-transform: uppercase;
+}
+.Row .text {
+    display: flex;
+    align-self: center;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.Row .icon {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.3rem;
+}
+.Row .icon.task::before {
+    content: '\f0c9';
+    font-size: .9rem;
+    font-weight: 600;
+}
+.Row .icon.today::before {
+    content: '\f005';
+}
+.Row .icon.upcoming::before {
+    content: '\f073';
+}
+.Row .icon.completed::before {
+    content: '\f00c';
+    font-weight: 600;
+}
+.Row .icon.archive::before {
+    content: '\f2ed';
+}

@@ -1,0 +1,13 @@
+.PopUp {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180deg, #cce8fe00 0%, #cce8fe7e 20%, var(--light-blue-color) 100%);
+    transition: all .3s;
+}

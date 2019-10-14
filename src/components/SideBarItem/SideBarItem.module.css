@@ -1,0 +1,9 @@
+.SideBarItem {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-template-rows: auto;
+    gap: var(--nav-gap);
+}
+.SideBarItem:not(:first-child) {
+    margin-top: 30px;
+}

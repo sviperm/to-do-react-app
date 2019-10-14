@@ -1,0 +1,32 @@
+.OpenCloseButton {
+    border: 0;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    background-color: var(--blue);
+    color: white;
+    box-shadow: 0px 3px 3px -1px var(--gray-shadow);
+    transition: box-shadow .5s cubic-bezier(0.3, 0.94, 0.3, 0.94),
+                background-color .05s ease-in-out;
+    margin-top: 10px;
+}
+.OpenCloseButton:hover {
+    box-shadow: 0 3px 4px 1px var(--gray-shadow);
+}
+.OpenCloseButton:focus {
+    outline: none;
+}
+.OpenCloseButton.active {
+    background-color: var(--blue-dark);
+}
+.OpenCloseButton div {
+    transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.OpenCloseButton div::before {
+    font-size: 2rem;
+    content: '\FF0B';
+}
+.OpenCloseButton.active div {
+    transform: rotate(45deg);
+}
