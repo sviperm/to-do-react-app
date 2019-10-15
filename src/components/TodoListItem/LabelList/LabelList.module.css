@@ -1,0 +1,6 @@
+.LabelList {
+    display: grid;
+    /* grid-template-columns: repeat(3, auto); */
+    gap: 5px;
+    margin-left: 7px;
+}

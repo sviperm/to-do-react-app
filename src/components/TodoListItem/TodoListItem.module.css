@@ -1,0 +1,18 @@
+.TodoListItem {
+    position: relative;
+    display: flex;
+    height: var(--todo-item-height);
+    padding: 10px 5px;
+    align-items: center;
+    cursor: default;
+    transition: all .2s;
+}
+.TodoListItem:not(:last-child) {
+    border-bottom: 1px solid var(--gray-light);
+}
+.text {
+    position: relative;
+    font-size: .9rem;
+    font-weight: 500;
+    transition: all .2s;
+}

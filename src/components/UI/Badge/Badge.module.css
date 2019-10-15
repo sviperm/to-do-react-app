@@ -1,0 +1,18 @@
+.Badge {
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 600;
+}
+.default, .gray {
+    background-color: var(--gray-light);
+}
+.red {
+    background-color: red;
+    color: white;
+}
+.pink {
+    background-color: var(--red-light);
+    color: white;
+}

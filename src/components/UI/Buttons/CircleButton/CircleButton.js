@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './CircleButton.module.css';
 
 const CircleButton = ({ background, size, icon, animationOnActive, isActive, onClick }) => {
@@ -19,11 +19,9 @@ const CircleButton = ({ background, size, icon, animationOnActive, isActive, onC
     }, [isActive])
 
     return (
-        useMemo(() => (
-            <button className={btnClasses.join(' ')} onClick={onClick}>
-                <div></div>
-            </button>
-        ), [btnClasses, onClick])
+        <button className={btnClasses.join(' ')} onClick={onClick}>
+            <div></div>
+        </button>
     );
 };
 

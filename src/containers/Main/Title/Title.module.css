@@ -1,0 +1,14 @@
+.Title {
+    padding-left: var(--main-padding);
+    border-bottom: 1px solid var(--gray-light);
+    font-weight: 600;
+}
+.Title .category {
+    padding: 20px 0 0 3px;
+    color: var(--blue);
+    font-size: .8rem;
+}
+.Title .task {
+    padding: 10px 0 25px 0;
+    font-size: 2rem;
+}

@@ -1,0 +1,60 @@
+.TodoCheckbox{
+    margin-right: 5px;
+}
+label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    margin: 0 15px;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+label:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34,50,84,0.03);
+    opacity: 0;
+}
+label:hover:before {
+    opacity: 1;
+}
+svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke: var(--blue);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+}
+svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+    transition: all .4s linear;
+}
+svg polyline {
+    stroke: var(--blue-color);
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+label.checked svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.2s;
+}
+label svg polyline {
+    transition: all 0.2s linear;
+}
+label.checked svg path {
+    stroke-dashoffset: -60;
+}

@@ -8,8 +8,8 @@
     --aside-padding-x: 50px;
     --space-between-tasks: 30px;
     --nav-gap: 20px;
-    --todo-margin: 50px;
-    --todo-height: 55px;
+    --main-padding: 50px;
+    --todo-item-height: 55px;
     --editor-width: 450px;
     --editor-margin-y: 20px;
     --editor-padding: 30px;
@@ -26,6 +26,7 @@
     --green: #3acc6c;
     --green-dark: #38bd66;
     --red-dark: rgb(228, 4, 4);
+    --red-light: #ff004041;
 }
 * {
     box-sizing: border-box;

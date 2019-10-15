@@ -1,0 +1,4 @@
+.TodoList {
+    margin: 0 var(--main-padding);
+    list-style-type: none;
+}
