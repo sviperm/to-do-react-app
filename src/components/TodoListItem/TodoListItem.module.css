@@ -10,6 +10,9 @@
 .TodoListItem:not(:last-child) {
     border-bottom: 1px solid var(--gray-light);
 }
+.TodoListItem:hover {
+    background-color: rgba(34,50,84,0.03);
+}
 .text {
     position: relative;
     font-size: .9rem;
