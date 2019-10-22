@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Backdrop from '../../UI/BackDrop/BackDrop'
+import Backdrop from '../../UI/Backdrop/Backdrop'
 
 import classes from './SidebarBackdrop.module.css'
 

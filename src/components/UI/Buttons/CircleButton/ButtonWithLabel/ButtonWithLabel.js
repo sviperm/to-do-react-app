@@ -1,25 +1,51 @@
-import React, { useState } from 'react';
-import CircleButton from '../CircleButton';
-import classes from './ButtonWithLabel.module.css';
+import React, { useState } from 'react'
+import { CSSTransition } from 'react-transition-group';
+import CircleButton from '../CircleButton'
+import classes from './ButtonWithLabel.module.css'
 
-const ButtonWithLabel = ({ order, onClick, label }) => {
+const ButtonWithLabel = ({ order, onClick, label, visability }) => {
     const [isLabelVisable, setLabelVisability] = useState(false)
-    const translateY = (order * 65) + 10;
+    const [style, setStyle] = useState({})
+
     return (
-        <div className={classes.ButtonWithLabel}
-            style={{ transform: `translateY(-${translateY}px)` }}
-            onClick={onClick}
-            onPointerEnter={() => setLabelVisability(true)}
-            onPointerLeave={() => setLabelVisability(false)}
+        <CSSTransition
+            in={visability}
+            unmountOnExit
+            timeout={300}
+            classNames={{
+                enter: classes.enter,
+                enterActive: classes.enterActive,
+                exit: classes.exit,
+                exitActive: classes.exitActive,
+            }}
+            onEntering={() => {
+                setStyle({ transform: `translateY(-${(order * 65) + 10}px)` })
+            }}
+            onExiting={() => {
+                setStyle({})
+            }}
+
         >
-            <CircleButton
-                size="small"
-                icon={label.toLowerCase()}
-            />
-            {label && isLabelVisable &&
-                <span>{label}</span>
-            }
-        </div>
+            {state => (
+                <div className={classes.ButtonWithLabel}
+                    style={{
+                        zIndex: 100 - order,
+                        ...style,
+                    }}
+                    onClick={onClick}
+                    onPointerEnter={() => setLabelVisability(true)}
+                    onPointerLeave={() => setLabelVisability(false)}
+                >
+                    <CircleButton
+                        size="small"
+                        icon={label.toLowerCase()}
+                    />
+                    {label && isLabelVisable &&
+                        <span>{label}</span>
+                    }
+                </div>
+            )}
+        </CSSTransition >
     );
 };
 

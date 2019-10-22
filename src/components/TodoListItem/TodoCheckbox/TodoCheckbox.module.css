@@ -1,19 +1,17 @@
-.TodoCheckbox{
-    margin-right: 5px;
-}
-label {
+.TodoCheckbox {
     display: flex;
     align-items: center;
     cursor: pointer;
     position: relative;
-    margin: 0 15px;
+    margin-left: 15px;
+    margin-right: 20px;
     width: 18px;
     height: 18px;
     -webkit-tap-highlight-color: transparent;
     transform: translate3d(0, 0, 0);
     transition: all 0.2s ease;
 }
-label:before {
+.TodoCheckbox:before {
     content: "";
     position: absolute;
     top: -15px;
@@ -24,7 +22,7 @@ label:before {
     background: rgba(34,50,84,0.03);
     opacity: 0;
 }
-label:hover:before {
+.TodoCheckbox:hover:before {
     opacity: 1;
 }
 svg {
@@ -47,14 +45,14 @@ svg polyline {
     stroke-dasharray: 22;
     stroke-dashoffset: 66;
 }
-label.checked svg polyline {
+.TodoCheckbox.checked svg polyline {
     stroke-dashoffset: 42;
     transition: all 0.2s linear;
     transition-delay: 0.2s;
 }
-label svg polyline {
+.TodoCheckbox svg polyline {
     transition: all 0.2s linear;
 }
-label.checked svg path {
+.TodoCheckbox.checked svg path {
     stroke-dashoffset: -60;
 }

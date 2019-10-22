@@ -19,3 +19,36 @@
     font-weight: 500;
     transition: all .2s;
 }
+.text::after {
+    content: "";
+    /* opacity: 0; */
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 0;
+    height: 1px;
+    animation-duration: 0.3s;
+    /* animation-duration: 3s; */
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background: black;
+}
+.text.lineThrough::after {
+    width: 100%;
+}
+.text.animate::after {
+    animation-name: strike-reversed;
+}
+.text.lineThrough.animate::after {
+    animation-name :strike;
+}
+
+@keyframes strike{
+    0%   { width: 0; }
+    100% { width: 100%; }
+}
+@keyframes strike-reversed{
+    0%   { width : 100%; }
+    100% { width: 0; }
+}

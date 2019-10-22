@@ -26,14 +26,18 @@ const PopUp = props => {
                 console.log('Add Category');
             }
         },
-    ].map(button => <ButtonWithLabel {...button} order={button.key} />);
+    ].map(button => (
+        <ButtonWithLabel {...button}
+            order={button.key}
+            visability={isOpen} />
+    ));
 
     return (
         <Fragment>
             <Backdrop isOpen={isOpen} onClick={() => { setOpenState(false) }} />
             <div className={classes.PopUp}>
                 <OpenCloseButton isActive={isOpen} onClick={toogleOpenState} />
-                {isOpen && buttons}
+                {buttons}
             </div>
         </Fragment>
     );
