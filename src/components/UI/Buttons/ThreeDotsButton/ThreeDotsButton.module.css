@@ -1,0 +1,22 @@
+.ThreeDotsButton {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: transparent;
+    border: 0;
+    color: var(--gray);
+    font-family: "Font Awesome 5 Free";
+    letter-spacing: 5px;
+    font-size: .15rem;
+    font-weight: 600;
+    padding: 10px;
+    margin-right: -5px;
+    cursor: pointer;
+    transition: color .25s ease-in-out;
+}
+.ThreeDotsButton::after {
+    content: '\f111 \f111 \f111';
+}
+.ThreeDotsButton:hover {
+    color: #585858
+}
