@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import classes from './CircleButton.module.css';
 
 const CircleButton = ({ background, size, icon, animationOnActive, isActive, onClick }) => {
-    const [btnClasses, setBtnClasses] = useState([
+    const [btnClasses, setBtnClasses] = useState([].concat(
         classes.CircleButton,
-        classes[background] || null,
-        classes[size] || null,
-        classes[`icon-${icon}`] || null,
-        classes[animationOnActive] || null,
-    ]);
+        classes[background],
+        classes[size],
+        classes[`icon-${icon}`],
+        classes[animationOnActive],
+    ));
 
     useEffect(() => {
         setBtnClasses(prevState => (

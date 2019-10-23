@@ -10,6 +10,7 @@ const TodoListItem = ({ id, isChecked, text, labels }) => {
     const [isCheckedState, setCheckedState] = useState(isChecked);
     const [textClasses, setTextClasses] = useState([]);
 
+    // TODO: переделать с помощью CSSTransition
     useAnimationOnUpdate(
         setTextClasses,
         [classes.text, classes.animate, classes.lineThrough],

@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import classes from './TodoCheckbox.module.css'
 
 const TodoCheckbox = ({ isChecked, onClick }) => {
-    const todoClasses = [
-        classes.TodoCheckbox,
-        isChecked ? classes.checked : null,
-    ];
+    // const todoClasses = [
+    //     classes.TodoCheckbox,
+    //     isChecked ? classes.checked : null,
+    // ];
+
+    const todoClasses = useMemo(() => (
+        [].concat(
+            classes.TodoCheckbox,
+            isChecked ? classes.checked : null,
+        )
+    ), [isChecked])
 
     return (
         <div className={todoClasses.join(' ')} onClick={onClick}>
