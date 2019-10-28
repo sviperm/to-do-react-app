@@ -23,16 +23,28 @@
     --gray: #7b7b7b;
     --gray-shadow: #7b7b7b91;
     --gray-light: #d8d8d870;
+    --green-light: #e4f6d0;
     --green: #3acc6c;
     --green-dark: #38bd66;
-    --red-dark: rgb(228, 4, 4);
-    --red-light: #ff004041;
+    --red-light: #ffe8e9;
+    --red: #e40404;
+    --yellow-light: #fff2df;
+    --yellow: #e6b152;
+    --violet-light: #fbedff;
+    --violet: #be6bd0;
+    --turquoise-light: #e2faf4;
+    --turquoise: #79ceb9;
+    --orange-light: #ffefdc;
+    --orange: #e9783f;
 }
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+}
+html {
+    overflow: hidden;
 }
 body {
     width: 100vw;

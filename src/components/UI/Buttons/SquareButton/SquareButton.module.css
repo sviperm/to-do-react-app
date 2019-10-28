@@ -1,0 +1,117 @@
+.SquareButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: all .2s;
+    cursor: pointer;
+    font-family: "Font Awesome 5 Free";
+}
+.blue {
+    color: var(--blue);
+    background-color: var(--blue-light);
+}
+.blue.bordered {
+    border: 3px solid var(--blue);
+}
+.blue:hover {
+    color: white;
+    background-color: var(--blue);
+}
+.green {
+    color: var(--green);
+    background-color: var(--green-light);
+}
+.green.bordered {
+    border: 3px solid var(--green);
+}
+.green:hover {
+    color: white;
+    background-color: var(--green);
+}
+.red {
+    color: var(--red);
+    background-color: var(--red-light);
+}
+.red.bordered {
+    border: 3px solid var(--red);
+}
+.red:hover {
+    color: white;
+    background-color: var(--red);
+}
+.yellow {
+    color: var(--yellow);
+    background-color: var(--yellow-light);
+}
+.yellow.bordered {
+    border: 3px solid var(--yellow);
+}
+.yellow:hover {
+    color: white;
+    background-color: var(--yellow);
+}
+.violet {
+    color: var(--violet);
+    background-color: var(--violet-light);
+}
+.violet.bordered {
+    border: 3px solid var(--violet);
+}
+.violet:hover {
+    color: white;
+    background-color: var(--violet);
+}
+.turquoise {
+    color: var(--turquoise);
+    background-color: var(--turquoise-light);
+}
+.turquoise.bordered {
+    border: 3px solid var(--turquoise);
+}
+.turquoise:hover {
+    color: white;
+    background-color: var(--turquoise);
+}
+.orange {
+    color: var(--orange);
+    background-color: var(--orange-light);
+}
+.orange.bordered {
+    border: 3px solid var(--orange);
+}
+.orange:hover {
+    color: white;
+    background-color: var(--orange);
+}
+.add::before {
+    content: "\f067";
+    font-weight: 900;
+}
+.done::before {
+    content: '\f00c';
+    font-weight: 900;
+}
+.failed::before {
+    content: "\f00d";
+    font-weight: 900;
+}
+.next::before {
+    content: "\f054";
+    font-weight: 900;
+}
+.calendar::before {
+    content: "\f073";
+}
+.tag::before {
+    content: "\f02b";
+    font-weight: 900;
+    font-size: 1rem;
+}
+.archive::before {
+    content: "\f2ed";
+}

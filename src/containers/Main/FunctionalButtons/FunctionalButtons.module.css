@@ -1,0 +1,22 @@
+.FunctionalButtons {
+    display: grid;
+    grid-template-columns: repeat(6, 40px);
+    gap: 15px;
+    position: absolute;
+    bottom: 0;
+    padding: 25px;
+}
+.Backdrop {
+    height: 90px;
+    width: calc(100% - 10px);
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.39) 20%, white 100%);
+    pointer-events: none;
+}
+.OpenEditorButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 25px 64px 25px 25px;
+}
