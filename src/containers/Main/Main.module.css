@@ -1,5 +1,7 @@
 .Main {
+    position: relative;
     margin-left: var(--side-width);
     height: 100vh;
+    max-height: 100vh;
     width: calc(100vw - var(--side-width));
 }
