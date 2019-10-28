@@ -1,14 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useRef, useEffect } from 'react'
 
-export const useMountDidUpdateEffect = (mountFun, didUpdFun, inputs) => {
+export const useDidMountEffect = (didMountFun, inputs) => {
     const isMounted = useRef(false);
     useEffect(() => {
         if (!isMounted.current) {
             isMounted.current = true;
-            mountFun();
-        } else {
-            didUpdFun();
+            didMountFun();
         }
     }, inputs)
 }
