@@ -1,4 +1,25 @@
 .TodoList {
-    margin: 0 var(--main-padding);
+    margin-left: var(--main-padding);
     list-style-type: none;
+    overflow-y: auto;
+    max-height: calc(100% - 111px);
+    padding-right: var(--main-padding);
+    padding-bottom: 75px;
+    
+	color: #00000000;
+	transition: color 0.3s;
+}
+.TodoList:hover {
+    color: var(--blue-light);
+}
+.TodoList::-webkit-scrollbar {
+    width: 10px;
+}
+.TodoList::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    transition: all .3s;
+	box-shadow: inset 0 0 0 10px;
+}
+.TodoList::-webkit-scrollbar-thumb:hover {
+    color: var(--blue);
 }

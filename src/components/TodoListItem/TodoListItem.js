@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { useDidUpdateEffect, useAnimationOnUpdate } from '../../hooks/customHooks'
-
 import LabelList from '../TodoListItem/LabelList/LabelList'
 import TodoCheckbox from './TodoCheckbox/TodoCheckbox'
+import ThreeDotsButton from '../UI/Buttons/ThreeDotsButton/ThreeDotsButton'
 
 import classes from './TodoListItem.module.css';
 
 const TodoListItem = ({ id, isChecked, text, labels }) => {
     const [isCheckedState, setCheckedState] = useState(isChecked);
     const [textClasses, setTextClasses] = useState([]);
+    // const scrollRef = useRef(null)
 
-    // TODO: переделать с помощью CSSTransition
     useAnimationOnUpdate(
         setTextClasses,
         [classes.text, classes.animate, classes.lineThrough],
@@ -22,15 +22,27 @@ const TodoListItem = ({ id, isChecked, text, labels }) => {
         console.log(`Todo №${id} ${isCheckedState ? 'checked' : 'unchecked'}`)
     }, [isCheckedState, id])
 
-    const onCheckboxClickhandler = () => {
-        setCheckedState(prevState => !prevState);
-    }
+    const onCheckboxClickHandler = useCallback(
+        () => {
+            setCheckedState(prevState => !prevState)
+        }, [],
+    )
+
+    const onSettingsButtonHandler = useCallback(
+        () => {
+            console.log(`Open setting ${id}`)
+            // scrollRef.current.scrollIntoView({ block: 'center', behavior: 'smooth' })
+        }, [id],
+    )
 
     return (
         <li className={classes.TodoListItem}>
-            <TodoCheckbox isChecked={isCheckedState} onClick={onCheckboxClickhandler} />
-            <span className={textClasses.join(' ')}>{text}</span>
-            <LabelList labels={labels} />
+            <div className={classes.container}>
+                <TodoCheckbox isChecked={isCheckedState} onClick={onCheckboxClickHandler} />
+                <span className={textClasses.join(' ')}>{text}</span>
+                <LabelList labels={labels} />
+            </div>
+            <ThreeDotsButton onClick={onSettingsButtonHandler} />
         </li>
     )
 }

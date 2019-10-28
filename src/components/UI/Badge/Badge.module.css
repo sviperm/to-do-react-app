@@ -9,10 +9,10 @@
     background-color: var(--gray-light);
 }
 .red {
-    background-color: red;
+    background-color: var(--red);
     color: white;
 }
 .pink {
     background-color: var(--red-light);
-    color: white;
+    color: var(--red);
 }

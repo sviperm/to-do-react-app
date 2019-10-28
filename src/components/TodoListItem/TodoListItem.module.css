@@ -6,12 +6,17 @@
     align-items: center;
     cursor: default;
     transition: all .2s;
+    justify-content: space-between;
+    color: black;
 }
 .TodoListItem:not(:last-child) {
     border-bottom: 1px solid var(--gray-light);
 }
 .TodoListItem:hover {
     background-color: rgba(34,50,84,0.03);
+}
+.TodoListItem .container {
+    display: flex;
 }
 .text {
     position: relative;
@@ -21,14 +26,12 @@
 }
 .text::after {
     content: "";
-    /* opacity: 0; */
     position: absolute;
     top: 50%;
     left: 0px;
     width: 0;
     height: 1px;
     animation-duration: 0.3s;
-    /* animation-duration: 3s; */
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -43,7 +46,6 @@
 .text.lineThrough.animate::after {
     animation-name :strike;
 }
-
 @keyframes strike{
     0%   { width: 0; }
     100% { width: 100%; }
