@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import classes from './ThreeDotsButton.module.css'
 
-const ThreeDotsButton = ({ btnClasses, onClick, children }) => {
-    const style = btnClasses ? [classes.ThreeDotsButton, btnClasses] : [classes.ThreeDotsButton]
+const ThreeDotsButton = ({ additionalClasses, onClick, children }) => {
+    const style = useMemo(
+        () => (
+            additionalClasses ?
+                [classes.ThreeDotsButton].concat(additionalClasses) :
+                [classes.ThreeDotsButton]
+        ), [additionalClasses])
     return (
-        <button className={style.join(' ')} onClick={onClick}>
+        <div className={style.join(' ')} onClick={onClick}>
             {children}
-        </button>
+        </div>
     )
 }
 

@@ -1,22 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import classes from './CircleButton.module.css';
 
 const CircleButton = ({ background, size, icon, animationOnActive, isActive, onClick }) => {
-    const [btnClasses, setBtnClasses] = useState([].concat(
+    const btnClasses = useMemo(() => ([].concat(
         classes.CircleButton,
         classes[background],
         classes[size],
         classes[`icon-${icon}`],
         classes[animationOnActive],
-    ));
-
-    useEffect(() => {
-        setBtnClasses(prevState => (
-            isActive ?
-                prevState.concat(classes.active) :
-                prevState.filter(btnClass => btnClass !== classes.active)
-        ));
-    }, [isActive])
+        isActive ? classes.active : null,
+    )), [isActive, background, size, icon, animationOnActive])
 
     return (
         <button className={btnClasses.join(' ')} onClick={onClick}>

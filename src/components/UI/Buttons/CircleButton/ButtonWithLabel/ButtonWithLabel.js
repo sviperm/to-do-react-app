@@ -15,9 +15,7 @@ const ButtonWithLabel = ({ order, onClick, label, visability }) => {
     )
     const translateY = useCallback(
         () => {
-            setStyle({
-                transform: `translateY(-${(order * 65) + 10}px)`
-            })
+            setStyle({ transform: `translateY(-${(order * 65) + 10}px)` })
         }, [order],
     )
     const removeTranslateY = useCallback(

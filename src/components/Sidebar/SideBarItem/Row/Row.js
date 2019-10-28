@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import classes from './Row.module.css';
 
-const Row = props => {
-    const rowClasses = [
+const Row = ({ title, icon, text }) => {
+    const rowClasses = useMemo(() => ([].concat(
         classes.Row,
-        props.title ? classes.title : classes.text,
-    ].join(' ');
+        title ? classes.title : classes.text,
+    ).join(' ')), [title]);
 
-    const rowIcon = props.title ? null
-        : [
+    const rowIcon = useMemo(() => (
+        title ? null : [
             classes.icon,
-            props.icon ? classes[props.icon] : classes.task,
-        ].join(' ');
+            icon ? classes[icon] : classes.task,
+        ].join(' ')
+    ), [title, icon]);
 
     return (
         <li className={rowClasses}>
             <span className={rowIcon}></span>
-            <span className={props.title ? classes.title : classes.text}>{props.text}</span>
+            <span className={title ? classes.title : classes.text}>{text}</span>
         </li>
     );
 };

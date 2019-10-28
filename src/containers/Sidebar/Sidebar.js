@@ -9,8 +9,10 @@ const Sidebar = props => {
     return (
         <aside className={classes.Sidebar}>
             <SettingsButton />
-            <Navigation />
-            <Categories />
+            <div className={classes.Navigation}>
+                <Navigation />
+                <Categories />
+            </div>
             <PopUp />
         </aside>
     );

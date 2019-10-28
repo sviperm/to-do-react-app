@@ -4,13 +4,14 @@
     flex-direction: column;
     height: 100vh;
     width: var(--side-width);
-    margin: 0;
-    padding: 75px 0 200px 50px;
     background-color: var(--blue-light);
     font-weight: 500;
     user-select: text;
     max-height: 100vh;
-    overflow-y: auto;
-    overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none;
+    overflow-y: hidden;
+}
+/* TODO: сделать стили для скроллбара */
+.Navigation {
+    padding: 75px 0 200px 50px;
+    overflow-y: overlay;
 }

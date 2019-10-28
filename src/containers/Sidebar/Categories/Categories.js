@@ -23,12 +23,45 @@ const Categories = props => {
                     { id: 4, title: 'python' },
                     { id: 5, title: 'JavaScript' },
                 ]
-            }
+            },
+            {
+                id: 3,
+                title: 'personal',
+                tasks: [
+                    { id: 1, title: 'history' },
+                    { id: 2, title: 'biology' },
+                    { id: 3, title: 'music' },
+                ],
+            },
+            {
+                id: 4,
+                title: 'personal',
+                tasks: [
+                    { id: 4, title: 'python' },
+                    { id: 5, title: 'JavaScript' },
+                ]
+            },
+            {
+                id: 5,
+                title: 'personal',
+                tasks: [
+                    { id: 1, title: 'history' },
+                    { id: 2, title: 'biology' },
+                    { id: 3, title: 'music' },
+                ],
+            },
+            {
+                id: 6,
+                title: 'personal',
+                tasks: [
+                    { id: 4, title: 'python' },
+                    { id: 5, title: 'JavaScript' },
+                ]
+            },
         ]);
     }, []);
 
     const categoriesElemets = categories.map(category => <Category key={category.id} {...category} />)
-
 
     return (
         <Fragment>
