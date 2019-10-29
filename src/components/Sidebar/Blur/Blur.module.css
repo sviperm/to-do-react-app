@@ -1,0 +1,19 @@
+.Blur {
+    position: absolute;
+    width: calc(100% - 8px);
+    left: 0;
+    transition: all .3s;
+}
+.top {
+    height: 75px;
+    top: 0;
+    background: linear-gradient(0deg, #cce8fe00 0%, #cce8fe75 5%, var(--blue-light) 100%);
+}
+.bottom {
+    height: 160px;
+    bottom: 0;
+    background: linear-gradient(180deg, #cce8fe00 0%, #cce8fe7e 20%, var(--blue-light) 100%);
+}
+.active {
+    height: 100vh;
+}
