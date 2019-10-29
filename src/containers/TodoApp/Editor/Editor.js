@@ -1,9 +1,10 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react'
 import SquareButton from '../../../components/UI/Buttons/SquareButton/SquareButton'
+import EditorInput from '../../../components/UI/Forms/Inputs/Editor/Input/Input'
 import classes from './Editor.module.css'
 
 const Editor = () => {
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(true)
     const [render, setRender] = useState(show)
 
     useEffect(() => {
@@ -35,6 +36,7 @@ const Editor = () => {
                     <div className={classes.CloseButton}>
                         <SquareButton color="red" icon="failed" bordered onClick={closeEditor} />
                     </div>
+                    <EditorInput />
                 </div>
             </>
             : null

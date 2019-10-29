@@ -1,16 +1,13 @@
 import React from 'react';
-
 import Title from './Title/Title'
 import TodoList from './TodoList/TodoList'
 import FunctionalButtons from './FunctionalButtons/FunctionalButtons'
 import Editor from './Editor/Editor'
+import classes from './TodoApp.module.css'
 
-
-import classes from './Main.module.css'
-
-const Main = (props) => {
+const Main = () => {
     return (
-        <div className={classes.Main}>
+        <div className={classes.TodoApp}>
             <Title />
             <TodoList />
             <FunctionalButtons />

@@ -1,16 +1,13 @@
 import React, { Fragment } from 'react';
 import './App.css';
-
 import Sidebar from './containers/Sidebar/Sidebar';
-import Main from './containers/Main/Main'
+import TodoApp from './containers/TodoApp/TodoApp'
 
-function App() {
-  return (
-    <Fragment>
-      <Sidebar />
-      <Main />
-    </Fragment>
-  );
-}
+const App = () => (
+  <Fragment>
+    <Sidebar />
+    <TodoApp />
+  </Fragment>
+)
 
 export default App;

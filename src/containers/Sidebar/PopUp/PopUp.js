@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react';
 
-import Backdrop from '../../../components/Sidebar/SidebarBackdrop/SidebarBackdrop';
+import Blur from '../../../components/Sidebar/Blur/Blur';
 import OpenCloseButton from '../../../components/UI/Buttons/CircleButton/OpenCloseButton/OpenCloseButton';
 import ButtonWithLabel from '../../../components/UI/Buttons/CircleButton/ButtonWithLabel/ButtonWithLabel';
 
 import classes from './PopUp.module.css';
 
-const PopUp = props => {
+const PopUp = () => {
     const [isOpen, setOpenState] = useState(false)
 
     const toogleOpenState = () => {
@@ -34,7 +34,7 @@ const PopUp = props => {
 
     return (
         <Fragment>
-            <Backdrop isOpen={isOpen} onClick={() => { setOpenState(false) }} />
+            <Blur position={'bottom'} isOpen={isOpen} onClick={() => { setOpenState(false) }} />
             <div className={classes.PopUp}>
                 <OpenCloseButton isActive={isOpen} onClick={toogleOpenState} />
                 {buttons}
