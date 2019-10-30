@@ -1,0 +1,35 @@
+.Checkbox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.Checkbox input {
+    display: none !important;
+}
+.Checkbox label {
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    color: white;
+    border: 1px solid white;
+    border-right: 0;
+    transition: all .2s;
+    cursor: pointer;
+}
+.Checkbox label:nth-of-type(1) {
+    border-radius: 5px 0 0 5px;
+}
+.Checkbox label:nth-last-of-type(1) {
+    border-radius: 0 5px 5px 0;
+    border-right: 1px solid white;
+}
+.Checkbox input:not(:checked) ~ label:nth-of-type(1) {
+    background-color: white;
+    color: var(--blue);
+    user-select: none;
+    pointer-events: none;
+}
+.Checkbox input:checked ~ label:nth-of-type(2) {
+    background-color: red;
+    user-select: none;
+    pointer-events: none;
+}

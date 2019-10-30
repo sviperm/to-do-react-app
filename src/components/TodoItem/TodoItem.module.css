@@ -1,4 +1,4 @@
-.TodoListItem {
+.TodoItem {
     position: relative;
     display: flex;
     height: var(--todo-item-height);
@@ -9,13 +9,13 @@
     justify-content: space-between;
     color: black;
 }
-.TodoListItem:not(:last-child) {
+.TodoItem:not(:last-child) {
     border-bottom: 1px solid var(--gray-light);
 }
-.TodoListItem:hover {
+.TodoItem:hover {
     background-color: rgba(34,50,84,0.03);
 }
-.TodoListItem .container {
+.TodoItem .container {
     display: flex;
 }
 .text {

@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoListItem from '../../../components/TodoListItem/TodoListItem'
+import TodoItem from '../../../components/TodoItem/TodoItem'
 import classes from './TodoList.module.css'
 
 const TodoList = () => {
@@ -165,7 +165,7 @@ const TodoList = () => {
                 { text: '3h', color: 'gray' },
             ]
         },
-    ].map((todo) => <TodoListItem key={todo.id} {...todo} />);
+    ].map((todo) => <TodoItem key={todo.id} {...todo} />);
 
     return (
         <ul className={classes.TodoList}>

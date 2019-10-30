@@ -5,7 +5,6 @@
     max-height: calc(100% - 111px);
     padding-right: var(--main-padding);
     padding-bottom: 75px;
-    
 	color: #00000000;
 	transition: color 0.3s;
 }

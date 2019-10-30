@@ -1,0 +1,14 @@
+.DateTime {
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: 60% auto;
+}
+.DateTime input {
+    display: block;
+    padding: 8px 10px;
+    width: 100%;
+    min-height: 40px;
+    border: 0;
+    border-radius: 5px;
+    font-size: .9rem;
+}
