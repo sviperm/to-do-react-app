@@ -2,21 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classes from './TextInput.module.css'
 
-const TextInput = ({ name, placeholder = 'Todo something', }) => {
+const TextInput = ({ placeholder = 'Todo something', onChangeHandler }) => {
     return (
         <input
-            name={name}
             className={classes.TextInput}
             type="text"
             placeholder={placeholder}
             autoComplete="off"
+            onChange={(e) => onChangeHandler(e.target.value)}
         />
     );
 }
 
 TextInput.propTypes = {
-    name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
+    onChangeHandler: PropTypes.func.isRequired,
 }
 
 export default TextInput

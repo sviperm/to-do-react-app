@@ -1,0 +1,26 @@
+.SubmitButton {
+    height: 40px;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    font-size: .9rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color .1s ease-in;
+}
+.green {
+    background-color: var(--green);
+}
+.green:active {
+    background-color: var(--green-dark);
+}
+.red {
+    background-color: var(--red);
+}
+.red:active {
+    background-color: var(--red);
+}
+.disabled {
+    background-color: var(--gray-light);
+    cursor: default;
+}

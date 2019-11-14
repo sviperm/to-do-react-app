@@ -3,7 +3,7 @@ import classes from './DateTime.module.css'
 import Legend from '../../Legend/Legend'
 import PropTypes from 'prop-types'
 
-const DateTime = ({ name, legendOnDate, legendOnTime }) => {
+const DateTime = ({ legendOnDate, legendOnTime, oncDateChangeHandler, onTimeChangeHandler }) => {
     return (
         <div className={classes.DateTime}>
             {legendOnDate
@@ -18,16 +18,17 @@ const DateTime = ({ name, legendOnDate, legendOnTime }) => {
                     ? <div />
                     : null
             }
-            <input type="date" name={`${name}-date`} />
-            <input type="time" name={`${name}-time`} />
+            <input type="date" onChange={(e) => oncDateChangeHandler(e.target.value)} />
+            <input type="time" onChange={(e) => onTimeChangeHandler(e.target.value)} />
         </div>
     )
 }
 
 DateTime.propTypes = {
-    name: PropTypes.string.isRequired,
     legendOnDate: PropTypes.string,
     legendOnTime: PropTypes.string,
+    oncDateChangeHandle: PropTypes.func,
+    onTimeChangeHandler: PropTypes.func,
 }
 
 export default DateTime

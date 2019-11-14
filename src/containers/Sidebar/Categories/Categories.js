@@ -5,7 +5,6 @@ const Categories = props => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        console.log('[Categories.js] setting categories');
         setCategories([
             {
                 id: 1,

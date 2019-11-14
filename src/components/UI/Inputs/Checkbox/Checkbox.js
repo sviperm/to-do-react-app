@@ -1,28 +1,33 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import classes from './Checkbox.module.css'
 
-const Checkbox = ({ checked = false, name, textOnTrue = 'Default', textOnFalse }) => {
+const Checkbox = ({ checked = false, textOnFalse = 'Default', textOnTrue, onChangeHandler }) => {
     const ref = useRef(null)
 
-    const toggleCheckbox = useCallback(() => {
+    const toggleCheckbox = () => {
         ref.current.checked = !ref.current.checked
-    }, [ref])
+        onChangeHandler(ref.current.checked)
+    }
 
     return (
         <div className={classes.Checkbox}>
-            <input ref={ref} type="checkbox" defaultChecked={checked} name={name} />
-            <label onClick={toggleCheckbox}>{textOnTrue}</label>
+            <input
+                ref={ref}
+                type="checkbox"
+                defaultChecked={checked}
+            />
             <label onClick={toggleCheckbox}>{textOnFalse}</label>
+            <label onClick={toggleCheckbox}>{textOnTrue}</label>
         </div>
     )
 }
 
 Checkbox.propTypes = {
-    name: PropTypes.string.isRequired,
     checked: PropTypes.bool,
-    textOnTrue: PropTypes.string,
-    textOnFalse: PropTypes.string.isRequired,
+    textOnFalse: PropTypes.string,
+    textOnTrue: PropTypes.string.isRequired,
+    onChangeHandler: PropTypes.func,
 }
 
 export default Checkbox
