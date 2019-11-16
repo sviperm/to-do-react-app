@@ -1,14 +1,12 @@
 .TodoItem {
-    position: relative;
-    display: flex;
-    height: var(--todo-item-height);
     padding: 10px 5px;
-    align-items: center;
-    cursor: default;
-    transition: all .2s;
+    display: flex;
     justify-content: space-between;
+    height: var(--todo-item-height);
+    align-items: center;
     color: black;
     cursor: -webkit-grab;
+    transition: all .2s;
 }
 .TodoItem:not(:last-child) {
     border-bottom: 1px solid var(--gray-light);

@@ -7,6 +7,7 @@
     --side-width: 300px;
     --aside-padding-x: 50px;
     --space-between-tasks: 30px;
+    --side-scroll-width: 6px;
     --nav-gap: 20px;
     --main-padding: 50px;
     --todo-item-height: 55px;
@@ -21,6 +22,7 @@
     --blue-dark: #1476d8;
     --gray: #7b7b7b;
     --gray-shadow: #7b7b7b91;
+    --gray-midlight: #94949498;
     --gray-light: #d8d8d870;
     --green-light: #e4f6d0;
     --green: #3acc6c;

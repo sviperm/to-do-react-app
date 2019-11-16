@@ -18,8 +18,23 @@ const TodoList = () => {
                 { text: '3h', color: 'gray' },
             ]
         },
+        {
+            id: 3, isChecked: false, text: 'Test text 2', labels: [
+                { text: '6 July', color: 'gray' },
+                { text: '02:00 PM', color: 'gray' },
+                { text: '3h', color: 'gray' },
+            ]
+        },
+        {
+            id: 4, isChecked: false, text: 'Test text 2', labels: [
+                { text: '6 July', color: 'gray' },
+                { text: '02:00 PM', color: 'gray' },
+                { text: '3h', color: 'gray' },
+            ]
+        },
     ].map((todo) => <TodoItem key={todo.id} {...todo} />);
 
+    // Вся анимация должна быть здесь
     return (
         <ul className={classes.TodoList}>
             {todoList}

@@ -9,7 +9,6 @@ import classes from './TodoItem.module.css';
 const TodoListItem = ({ id, isChecked, text, labels }) => {
     const [isCheckedState, setCheckedState] = useState(isChecked);
     const [textClasses, setTextClasses] = useState([]);
-    // const scrollRef = useRef(null)
 
     useAnimationOnUpdate(
         setTextClasses,
@@ -22,23 +21,19 @@ const TodoListItem = ({ id, isChecked, text, labels }) => {
         console.log(`Todo №${id} ${isCheckedState ? 'checked' : 'unchecked'}`)
     }, [isCheckedState, id])
 
-    const onCheckboxClickHandler = useCallback(
-        () => {
-            setCheckedState(prevState => !prevState)
-        }, [],
-    )
+    const toggleCheckbox = useCallback(() => setCheckedState(prevState => !prevState), [])
 
     const onSettingsButtonHandler = useCallback(
         () => {
             console.log(`Open setting ${id}`)
-            // scrollRef.current.scrollIntoView({ block: 'center', behavior: 'smooth' })
         }, [id],
     )
 
+    // Вынести формирование li в TodoList
     return (
         <li className={classes.TodoItem}>
             <div className={classes.container}>
-                <TodoCheckbox isChecked={isCheckedState} onClick={onCheckboxClickHandler} />
+                <TodoCheckbox isChecked={isCheckedState} onClick={toggleCheckbox} />
                 <span className={textClasses.join(' ')}>{text}</span>
                 <LabelList labels={labels} />
             </div>
