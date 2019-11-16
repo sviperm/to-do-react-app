@@ -1,60 +1,39 @@
-import React, { useState, useCallback } from 'react'
-import { CSSTransition } from 'react-transition-group';
-import CircleButton from '../CircleButton'
+import React, { useState } from 'react'
+import { useTransition, animated, config } from 'react-spring'
 import classes from './ButtonWithLabel.module.css'
 
-const ButtonWithLabel = ({ order, onClick, label, visability }) => {
+import CircleButton from '../CircleButton'
+
+const ButtonWithLabel = ({ id, show, onClick, label }) => {
     const [isLabelVisable, setLabelVisability] = useState(false)
-    const [style, setStyle] = useState({})
 
-    const showLabel = useCallback(
-        () => { setLabelVisability(true) }, [],
-    )
-    const hideLabel = useCallback(
-        () => { setLabelVisability(false) }, [],
-    )
-    const translateY = useCallback(
-        () => {
-            setStyle({ transform: `translateY(-${(order * 65) + 10}px)` })
-        }, [order],
-    )
-    const removeTranslateY = useCallback(
-        () => { setStyle({}) }, [],
-    )
+    const translateY = `translateY(-${(id * 65) + 10}px)`
 
-    return (
-        <CSSTransition
-            in={visability}
-            unmountOnExit
-            timeout={300}
-            classNames={{
-                enter: classes.enter,
-                enterActive: classes.enterActive,
-                exit: classes.exit,
-                exitActive: classes.exitActive,
-            }}
-            onEntering={translateY}
-            onExiting={removeTranslateY}
+    const transitions = useTransition(show, null, {
+        from: { transform: `translateY(0px)` },
+        enter: { transform: translateY },
+        leave: { transform: `translateY(0px)` },
+        config: { ...config.wobbly, clamp: !show },
+    })
 
+    return transitions.map(({ item, key, props }) => item && (
+        <animated.div
+            key={key}
+            className={classes.ButtonWithLabel}
+            style={{ ...props, zIndex: -id }}
+            onClick={onClick}
+            onPointerEnter={() => setLabelVisability(true)}
+            onPointerLeave={() => setLabelVisability(false)}
         >
-            <div className={classes.ButtonWithLabel}
-                style={{
-                    zIndex: 100 - order,
-                    ...style,
-                }}
-                onClick={onClick}
-                onPointerEnter={showLabel}
-                onPointerLeave={hideLabel}
-            >
-                <CircleButton
-                    size="small"
-                    icon={label.toLowerCase()}
-                />
-                {label && isLabelVisable &&
-                    <span>{label}</span>
-                }
-            </div>
-        </CSSTransition >
+            <CircleButton
+                size="small"
+                icon={label.toLowerCase()}
+            />
+            {label && isLabelVisable &&
+                <span>{label}</span>
+            }
+        </animated.div>
+    )
     );
 };
 

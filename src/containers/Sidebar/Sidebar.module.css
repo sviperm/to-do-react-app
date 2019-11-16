@@ -18,10 +18,10 @@
 	transition: color 0.3s;
 }
 .Navigation:hover {
-    color: var(--blue);
+    color: var(--gray-midlight);
 }
 .Navigation::-webkit-scrollbar {
-    width: 8px;
+    width: var(--side-scroll-width);
 }
 .Navigation::-webkit-scrollbar-thumb {
     border-radius: 7px;

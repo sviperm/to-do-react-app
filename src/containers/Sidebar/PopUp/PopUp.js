@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 
 import Blur from '../../../components/Sidebar/Blur/Blur';
 import OpenCloseButton from '../../../components/UI/Buttons/CircleButton/OpenCloseButton/OpenCloseButton';
@@ -9,37 +9,39 @@ import classes from './PopUp.module.css';
 const PopUp = () => {
     const [isOpen, setOpenState] = useState(false)
 
-    const toogleOpenState = () => {
-        setOpenState(prevState => !prevState)
-    };
-
     const buttons = [
         {
-            key: 1, label: 'Task', onClick: () => {
-                setOpenState(false);
+            id: 1,
+            label: 'Task',
+            onClick: () => {
+                setOpenState(false)
                 console.log('Add Task');
             }
         },
         {
-            key: 2, label: 'Category', onClick: () => {
-                setOpenState(false);
+            id: 2,
+            label: 'Category',
+            onClick: () => {
+                setOpenState(false)
                 console.log('Add Category');
             }
         },
     ].map(button => (
-        <ButtonWithLabel {...button}
-            order={button.key}
-            visability={isOpen} />
+        <ButtonWithLabel
+            {...button}
+            key={button.id}
+            show={isOpen}
+        />
     ));
 
     return (
-        <Fragment>
-            <Blur position={'bottom'} isOpen={isOpen} onClick={() => { setOpenState(false) }} />
+        <>
+            <Blur position={'bottom'} isOpen={isOpen} onClick={() => setOpenState(false)} />
             <div className={classes.PopUp}>
-                <OpenCloseButton isActive={isOpen} onClick={toogleOpenState} />
+                <OpenCloseButton isActive={isOpen} onClick={() => setOpenState(prevState => !prevState)} />
                 {buttons}
             </div>
-        </Fragment>
+        </>
     );
 }
 

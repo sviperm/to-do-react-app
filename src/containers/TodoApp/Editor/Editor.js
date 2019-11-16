@@ -5,7 +5,7 @@ import EditorModal from './EditorModal/EditorModal'
 import EditorForm from './EditorForm/EditorForm'
 
 const Editor = () => {
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(false)
     const closeEditor = useCallback(() => {
         console.log('close')
         setShow(false)
