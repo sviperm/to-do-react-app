@@ -1,20 +1,4 @@
-.TodoItem {
-    padding: 10px 5px;
-    display: flex;
-    justify-content: space-between;
-    height: var(--todo-item-height);
-    align-items: center;
-    color: black;
-    cursor: -webkit-grab;
-    transition: all .2s;
-}
-.TodoItem:not(:last-child) {
-    border-bottom: 1px solid var(--gray-light);
-}
-.TodoItem:hover {
-    background-color: rgba(34,50,84,0.03);
-}
-.TodoItem .container {
+.container {
     display: flex;
 }
 .text {

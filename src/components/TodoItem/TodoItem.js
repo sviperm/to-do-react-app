@@ -29,16 +29,15 @@ const TodoListItem = ({ id, isChecked, text, labels }) => {
         }, [id],
     )
 
-    // Вынести формирование li в TodoList
     return (
-        <li className={classes.TodoItem}>
+        <>
             <div className={classes.container}>
                 <TodoCheckbox isChecked={isCheckedState} onClick={toggleCheckbox} />
                 <span className={textClasses.join(' ')}>{text}</span>
                 <LabelList labels={labels} />
             </div>
             <ThreeDotsButton onClick={onSettingsButtonHandler} />
-        </li>
+        </>
     )
 }
 

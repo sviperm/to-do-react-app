@@ -1,10 +1,10 @@
 .TodoList {
-    margin-left: var(--main-padding);
-    list-style-type: none;
-    overflow-y: auto;
-    max-height: calc(100% - 111px);
-    padding-right: var(--main-padding);
+    position: relative;
+    padding: 0 var(--main-padding);
     padding-bottom: 75px;
+    max-height: calc(100% - 111px);
+    overflow-y: auto;
+    list-style-type: none;
 	color: #00000000;
 	transition: color 0.3s;
 }
@@ -22,3 +22,52 @@
 .TodoList::-webkit-scrollbar-thumb:hover {
     color: var(--blue);
 }
+.TodoItem {
+    position: absolute;
+    padding: 10px 5px;
+    width: calc(100% - 2 * var(--main-padding));
+    height: var(--todo-item-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    cursor: -webkit-grab;
+    transition: background-color .2s;
+    background-color: white;
+    user-select: none;
+    /* touch-action: none; */
+}
+.TodoItem:not(:last-child) {
+    border-bottom: 1px solid var(--gray-light) !important;
+}
+.TodoItem:hover {
+    background-color: rgba(34,50,84,0.03);
+}
+.TodoItem:active {
+    cursor: -webkit-grabbing;
+    background-color: white;
+}
+.TodoItem:hover .Grip {
+    opacity: 1;
+}
+/* .Grip {
+    position: absolute;
+    left: -30px;
+    padding: 7px;
+    color: var(--gray);
+    border-radius: 7px;
+    opacity: 0;
+    transition: opacity .2s;
+    touch-action: none;
+}
+.Grip::before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f58e';
+    font-weight: 600;
+}
+.Grip:hover {
+    background-color: var(--gray-light);
+}
+.Grip:active {
+    opacity: 1;
+} */
